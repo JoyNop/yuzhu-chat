@@ -2,34 +2,39 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-13 11:38:46
+ * @LastEditTime: 2021-01-13 17:08:19
  * @Description: file content
  * @FilePath: /yuzhu-client/src/App.vue
 -->
 <template>
-  <div id="app">
-    
-    <div>
-      <p>
-        If Element Plus is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button type="primary">el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your  App"/>
-  </div>
+  <!-- <ElContainer id="app"  >
+    <ElAside width="200px">Aside</ElAside>
+    <ElContainer>
+      <ElHeader>Header</ElHeader>
+      <ElMain><router-view /></ElMain>
+    </ElContainer>
+  </ElContainer> -->
+
+ <ElContainer id="app">
+    <ElAside width="60px">Aside</ElAside>
+    <ElMain><router-view /></ElMain>
+  </ElContainer>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import { ElContainer, ElAside, ElHeader, ElMain } from "element-plus";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    ElContainer,
+    ElAside,
+    // ElHeader,
+    ElMain,
+  },
+};
 </script>
 
 <style>
@@ -37,8 +42,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  background-color: bisque;
+  /* text-align: center; */
+  /* color: #2c3e50; */
+  /* margin-top: 60px; */
 }
 </style>

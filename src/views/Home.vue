@@ -1,7 +1,15 @@
+<!--
+ * @Author: HanRui(JoyNop)
+ * @Date: 2021-01-13 11:20:50
+ * @LastEditors: HanRui(JoyNop)
+ * @LastEditTime: 2021-01-13 16:43:20
+ * @Description: file content
+ * @FilePath: /yuzhu-client/src/views/Home.vue
+-->
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+     
+    <HelloWorld msg="Welcome to Your  TypeScript App"/>
   </div>
 </template>
 
