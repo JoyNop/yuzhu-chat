@@ -1,4 +1,12 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+/*
+ * @Author: HanRui(JoyNop)
+ * @Date: 2021-01-13 11:20:50
+ * @LastEditors: HanRui(JoyNop)
+ * @LastEditTime: 2021-01-13 11:25:28
+ * @Description: file content
+ * @FilePath: /yuzhu-client/src/router/index.ts
+ */
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
@@ -18,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
 })
 
