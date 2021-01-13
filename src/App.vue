@@ -1,6 +1,14 @@
+<!--
+ * @Author: HanRui(JoyNop)
+ * @Date: 2021-01-13 11:20:50
+ * @LastEditors: HanRui(JoyNop)
+ * @LastEditTime: 2021-01-13 11:38:46
+ * @Description: file content
+ * @FilePath: /yuzhu-client/src/App.vue
+-->
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    
     <div>
       <p>
         If Element Plus is successfully added to this project, you'll see an
@@ -9,7 +17,7 @@
       </p>
       <el-button type="primary">el-button</el-button>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your  App"/>
   </div>
 </template>
 
