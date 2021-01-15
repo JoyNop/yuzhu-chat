@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-13 17:58:49
+ * @LastEditTime: 2021-01-14 14:41:38
  * @Description: file content
  * @FilePath: /yuzhu-client/src/App.vue
 -->
@@ -15,15 +15,16 @@
     </ElContainer>
   </ElContainer> -->
 
- <ElContainer id="app">
-    <ElAside class="yz-common-sider-bar" width="4rem" ><SiderBar/></ElAside>
-    <ElMain><router-view /></ElMain>
+  <ElContainer id="app">
+    <ElAside style="-webkit-app-region: drag" class="yz-common-sider-bar" width="4rem"><SiderBar /></ElAside>
+    <ElMain style="-webkit-app-region: no-drag; background-color: bisque"
+      ><router-view
+    /></ElMain>
   </ElContainer>
-  
 </template>
 
 <script>
-import SiderBar from './components/siderbar/SiderBar'
+import SiderBar from "./components/siderbar/SiderBar.vue";
 import { ElContainer, ElAside, ElHeader, ElMain } from "element-plus";
 
 export default {
@@ -39,21 +40,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
- #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background-color: bisque;
   /* text-align: center; */
   /* color: #2c3e50; */
   /* margin-top: 60px; */
 }
 
-.yz-common-sider-bar{
+.yz-common-sider-bar {
   padding: 0.5rem;
   text-align: center;
-   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

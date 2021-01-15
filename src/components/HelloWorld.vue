@@ -2,19 +2,14 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-13 16:59:48
+ * @LastEditTime: 2021-01-14 14:35:08
  * @Description: file content
  * @FilePath: /yuzhu-client/src/components/HelloWorld.vue
 -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
+    <h1>www.joynop.com</h1>
      
   </div>
 </template>

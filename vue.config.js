@@ -44,6 +44,8 @@ module.exports = {
         args[0].title = "语竹";
         return args;
       });
-  }
+  },
+
+  productionSourceMap: false
 };
 
