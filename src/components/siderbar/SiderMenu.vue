@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-14 13:56:46
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-15 11:58:25
+ * @LastEditTime: 2021-01-17 11:33:45
  * @Description: file content
  * @FilePath: /yuzhu-client/src/components/siderbar/SiderMenu.vue
 -->
@@ -81,6 +81,13 @@ export default defineComponent({
         { title: "设置", icon: "el-icon-setting", link: "setting" },
       ],
     };
+  },
+
+  mounted(){
+ this.$http.get("/api/user/list").then(res=>{
+   console.log(res.data);
+   
+ })
   },
   methods: {
     handleOpen(key: any, keyPath: any) {

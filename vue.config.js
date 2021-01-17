@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 17:21:08
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-13 17:21:38
+ * @LastEditTime: 2021-01-17 11:31:47
  * @Description: file content
  * @FilePath: /yuzhu-client/vue.config.js
  */
@@ -45,7 +45,7 @@ module.exports = {
         return args;
       });
   },
-
+  
   productionSourceMap: false
 };
 

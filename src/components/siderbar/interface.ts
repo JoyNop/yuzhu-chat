@@ -9,15 +9,15 @@
 
 
  export interface SiderMenuData{
-  isCollapse:boolean,
-  isRouter:boolean,
-  navBarList:NavBar[],
+  isCollapse: boolean;
+  isRouter: boolean;
+  navBarList: NavBar[];
 
  }
 
   interface NavBar{
-  title:string,
-  icon:string,
-  link:string,
+  title: string;
+  icon: string;
+  link: string;
   
 }
