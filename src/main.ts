@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-17 11:47:35
+ * @LastEditTime: 2021-01-17 14:58:16
  * @Description: file content
  * @FilePath: /yuzhu-client/src/main.ts
  */
@@ -14,7 +14,7 @@ import store from "./store";
 import installElementPlus from "./plugins/element";
 import axios from "./plugins/axios";
 import VueAxios from "vue-axios";
-require( "./mock");
+require("./mock");
 
 const app = createApp(App);
 installElementPlus(app);
