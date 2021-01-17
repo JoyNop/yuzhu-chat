@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-14 13:56:46
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-14 14:20:41
+ * @LastEditTime: 2021-01-15 11:58:25
  * @Description: file content
  * @FilePath: /yuzhu-client/src/components/siderbar/SiderMenu.vue
 -->
@@ -15,8 +15,14 @@
     @open="handleOpen"
     @close="handleClose"
     :collapse="isCollapse"
+    :router="isRouter"
   >
-    <ElSubmenu index="1">
+    <ElMenuItem v-for="(n, i) in navBarList" :key="i" :index="n.link">
+      <i :class="n.icon"></i>
+      <template #title>{{ n.title }}</template>
+    </ElMenuItem>
+
+    <!-- <ElSubmenu index="1">
       <template #title>
         <i class="el-icon-location"></i>
         <span>导航一</span>
@@ -45,25 +51,35 @@
     <ElMenuItem index="4">
       <i class="el-icon-setting"></i>
       <template #title>导航四</template>
-    </ElMenuItem>
+    </ElMenuItem> -->
   </ElMenu>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { ElMenu, ElMenuItem, ElSubmenu, ElMenuItemGroup } from "element-plus";
+import { ElMenu, ElMenuItem } from "element-plus";
+
+import { SiderMenuData } from "./interface";
 
 export default defineComponent({
   name: "SiderMenu",
   components: {
     ElMenu,
     ElMenuItem,
-    ElMenuItemGroup,
-    ElSubmenu,
+    // ElMenuItemGroup,
+    // ElSubmenu,
   },
-  data() {
+  data(): SiderMenuData {
     return {
       isCollapse: true,
+      isRouter: true,
+      navBarList: [
+        { title: "消息", icon: "el-icon-chat-line-round", link: "chat" },
+        { title: "朋友", icon: "el-icon-user", link: "friends" },
+        { title: "工作台", icon: "el-icon-monitor", link: "dashboard" },
+        { title: "文件", icon: "el-icon-folder", link: "file" },
+        { title: "设置", icon: "el-icon-setting", link: "setting" },
+      ],
     };
   },
   methods: {

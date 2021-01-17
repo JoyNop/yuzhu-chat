@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:24:23
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-15 10:31:58
+ * @LastEditTime: 2021-01-15 11:49:18
  * @Description: file content
  * @FilePath: /yuzhu-client/src/background.ts
  */
@@ -24,11 +24,11 @@ async function createWindow() {
     width: 1000,
     height: 600,
     frame: true,
-    modal: true,
-    darkTheme: true,
-    resizable: false,
-    minimizable: false,
-    maximizable: false,
+    // modal: true,
+    // darkTheme: true,
+    // resizable: false,
+    // minimizable: false,
+    // maximizable: false,
     // transparent: true,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone

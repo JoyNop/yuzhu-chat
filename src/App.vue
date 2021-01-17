@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-14 14:41:38
+ * @LastEditTime: 2021-01-15 11:50:24
  * @Description: file content
  * @FilePath: /yuzhu-client/src/App.vue
 -->
@@ -16,17 +16,16 @@
   </ElContainer> -->
 
   <ElContainer id="app">
-    <ElAside style="-webkit-app-region: drag" class="yz-common-sider-bar" width="4rem"><SiderBar /></ElAside>
-    <ElMain style="-webkit-app-region: no-drag; background-color: bisque"
-      ><router-view
-    /></ElMain>
+    <ElAside class="yz-common-sider-bar" width="4rem"><SiderBar /></ElAside>
+    <ElMain><router-view /></ElMain>
   </ElContainer>
 </template>
 
 <script>
 import SiderBar from "./components/siderbar/SiderBar.vue";
 import { ElContainer, ElAside, ElHeader, ElMain } from "element-plus";
-
+//  style="-webkit-app-region: drag"
+// style="-webkit-app-region: no-drag; background-color: bisque"
 export default {
   name: "App",
   components: {
