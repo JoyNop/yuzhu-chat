@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-14 13:56:46
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-17 11:33:45
+ * @LastEditTime: 2021-01-17 16:06:22
  * @Description: file content
  * @FilePath: /yuzhu-client/src/components/siderbar/SiderMenu.vue
 -->
@@ -83,11 +83,10 @@ export default defineComponent({
     };
   },
 
-  mounted(){
- this.$http.get("/api/user/list").then(res=>{
-   console.log(res.data);
-   
- })
+  mounted() {
+    // this.$http.get("/api/user/list").then((res) => {
+
+    //  });
   },
   methods: {
     handleOpen(key: any, keyPath: any) {

@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-17 10:39:08
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-17 11:49:33
+ * @LastEditTime: 2021-01-17 16:02:41
  * @Description: file content
  * @FilePath: /yuzhu-client/src/plugins/axios.ts
  */
@@ -24,7 +24,7 @@ const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
   function(config) {
-    console.log(config);
+    // console.log(config);
     // Do something before request is sent
     return config;
   },
@@ -38,7 +38,7 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
-    console.log(response);
+    // console.log(response);
     
     return response;
   },

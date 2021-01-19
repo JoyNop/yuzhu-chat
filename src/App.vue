@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:20:50
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-15 11:50:24
+ * @LastEditTime: 2021-01-18 09:21:23
  * @Description: file content
  * @FilePath: /yuzhu-client/src/App.vue
 -->
@@ -48,7 +48,9 @@ export default {
   /* color: #2c3e50; */
   /* margin-top: 60px; */
 }
-
+.el-main{
+  padding:0
+}
 .yz-common-sider-bar {
   padding: 0.5rem;
   text-align: center;
