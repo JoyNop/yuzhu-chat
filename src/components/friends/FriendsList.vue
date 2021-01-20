@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-17 15:26:38
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-19 18:07:02
+ * @LastEditTime: 2021-01-19 18:25:44
  * @Description: file content 
  * @FilePath: /yuzhu-client/src/components/friends/FriendsList.vue
 -->
@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { getCurrentInstance, onMounted, reactive, ref } from "vue";
+import { defineComponent, getCurrentInstance, onMounted, reactive, ref } from "vue";
 import FriendCard from "./FriendCard.vue";
 import { User } from "./friends";
 import { ElInput } from "element-plus";
@@ -39,13 +39,13 @@ interface ReactiveState {
   userList: User[];
 }
 
-export default {
+export default defineComponent( {
   name: "FriendsList",
-  components: { 
-    FriendCard, 
-    ElInput
-     },
-  setup() {
+  components: {
+    FriendCard,
+    ElInput,
+  },
+  setup(props, context) {
     const internalInstance = getCurrentInstance();
     const http = internalInstance?.appContext.app.axios;
 
@@ -65,8 +65,8 @@ export default {
     };
 
     const getUserInfo = (user: User, selectIndex: number) => {
-      console.log(user);
-      selection.value = selectIndex;
+       selection.value = selectIndex;
+       context.emit("handleUserData", user);
     };
 
     onMounted(async () => {
@@ -83,7 +83,7 @@ export default {
   // data() {},
 
   // mounted() {},
-};
+});
 </script>
 <style lang="scss" scoped>
 .user-list-container {

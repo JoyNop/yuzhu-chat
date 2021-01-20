@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:24:23
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-15 11:49:18
+ * @LastEditTime: 2021-01-20 12:01:04
  * @Description: file content
  * @FilePath: /yuzhu-client/src/background.ts
  */
@@ -23,6 +23,8 @@ async function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 600,
+    minHeight:650,
+    minWidth:850,
     frame: true,
     // modal: true,
     // darkTheme: true,
