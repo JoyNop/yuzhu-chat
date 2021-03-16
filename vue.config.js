@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 17:21:08
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-17 11:31:47
+ * @LastEditTime: 2021-01-22 11:49:21
  * @Description: file content
  * @FilePath: /yuzhu-client/vue.config.js
  */
@@ -32,7 +32,10 @@ module.exports = {
   //       javascriptEnabled: true
   //     }
   //   }
-  // },
+  // }, 
+  configureWebpack: {
+    devtool: 'source-map'
+  },
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))

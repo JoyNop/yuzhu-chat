@@ -2,7 +2,7 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-19 17:23:59
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-20 12:00:29
+ * @LastEditTime: 2021-01-25 18:02:17
  * @Description: file content
  * @FilePath: /yuzhu-client/src/components/friends/FriendBoard.vue
 -->
@@ -29,7 +29,7 @@
           </ul>
         </div>
         <div class="friend-chat">
-          <ElButton type="primary">发送消息</ElButton>
+          <ElButton type="primary" @click="sendMessage">发送消息</ElButton>
         </div>
       </div>
     </ElCard>
@@ -38,8 +38,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { User } from "./friends";
+// import { User } from "./friends";
 import { ElCard, ElAvatar, ElDivider, ElButton } from "element-plus";
+// import { ipcRenderer } from "electron";
+const { ipcRenderer } = window.require("electron");
 
 export default defineComponent({
   name: "FriendBoard",
@@ -47,15 +49,44 @@ export default defineComponent({
   props: {
     user: Object,
   },
+  methods: {
+    sendMessage: async () => {
+      try {
+        console.log(window);
+        console.log(ipcRenderer.sendSync("synchronous-message", "ping")); // prints "pong"
 
-  setup(props, context) {
-    console.log(props.user);
-    const text = () => {
-      console.log(props.user);
-    };
-
-    return { text };
+                ipcRenderer.on('asynchronous-reply', ( ) => {
+          // console.log(arg) // prints "pong"
+        })
+        ipcRenderer.send("asynchronous-message", "ping");
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
+  // setup(props) {
+  //   console.log(props.user);
+
+  //   const text = () => {
+  //     console.log(props.user);
+  //   };
+  //   const sendMessage = async () => {
+  //     try {
+  //         console.log(window);
+
+  //       if (window.require) {
+
+  //         console.log(window.require);
+
+  //   // const ipc = window.require('electron').ipcRenderer
+  //   // ipc.send("login")
+  // }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   return { text,  };
+  // },
 });
 </script>
 

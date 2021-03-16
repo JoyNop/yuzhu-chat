@@ -2,13 +2,19 @@
  * @Author: HanRui(JoyNop)
  * @Date: 2021-01-13 11:24:23
  * @LastEditors: HanRui(JoyNop)
- * @LastEditTime: 2021-01-20 12:01:04
+ * @LastEditTime: 2021-01-25 17:13:17
  * @Description: file content
  * @FilePath: /yuzhu-client/src/background.ts
  */
 "use strict";
 
-import { app, protocol, BrowserWindow, globalShortcut } from "electron";
+import {
+  app,
+  protocol,
+  BrowserWindow,
+  globalShortcut,
+  ipcMain,
+} from "electron";
 import { createProtocol } from "vue-cli-plugin-electron-builder/lib";
 import installExtension, { VUEJS_DEVTOOLS } from "electron-devtools-installer";
 const isDevelopment = process.env.NODE_ENV !== "production";
@@ -23,8 +29,8 @@ async function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 600,
-    minHeight:650,
-    minWidth:850,
+    minHeight: 650,
+    minWidth: 850,
     frame: true,
     // modal: true,
     // darkTheme: true,
@@ -35,8 +41,8 @@ async function createWindow() {
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: (process.env
-        .ELECTRON_NODE_INTEGRATION as unknown) as boolean,
+      nodeIntegration: true
+      // (process.env.ELECTRON_NODE_INTEGRATION as unknown) as boolean,
     },
   });
 
@@ -56,7 +62,15 @@ async function createWindow() {
   }
 }
 
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg,"eee") // prints "ping"
+  event.reply('asynchronous-reply', 'pong1')
+})
 
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg,"333") // prints "ping"
+  event.returnValue = 'pong'
+})
 
 // Quit when all windows are closed.
 app.on("window-all-closed", () => {
